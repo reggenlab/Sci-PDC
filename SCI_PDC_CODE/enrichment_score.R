@@ -233,29 +233,6 @@ write.csv(p_file2,file = "o_beta_pval.csv")
 
 #####################################################
 
-#####################################################
-expression_matrix = read.table('exp_young_beta.txt',header=T,sep=',',row.names=1,stringsAsFactors = F)
-
-Pval1 = binorm(expression_matrix)
-combp = UniPath::combine(geneSet,expression_matrix,rownames(expression_matrix),Pval1,thr=5)
-
-########## ADJUSTED PATHWAY SCORES
-scores = adjust(combp,combp_ref)
-
-
-data =  scores$adjpvaraw
-write.csv(data,file = "un_y_scores.csv",quote = F)
-
-xc_ductal_n= cooccurrence(combp_ref,data)
-corr_file=xc_ductal_n$correlation
-corr_file2<-corr_file[1812:3140,1:1811]
-p_file=xc_ductal_n$pval
-p_file2<-p_file[1812:3140,1:1811]
-write.csv(corr_file2,file = "y_beta_corr.csv")
-write.csv(p_file2,file = "y_beta_pval.csv")
-
-
-#####################################################
 
 
 
