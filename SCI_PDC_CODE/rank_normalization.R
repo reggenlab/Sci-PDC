@@ -27,7 +27,7 @@ ldf2 <- mclapply(sub_file, function(x) {
             rankadj[i,j] =1- (length(pos)/ncol(rank_ref)) ;
         }
     }
-        null_path<-paste("/storage/vibhor/Phds/Madhu/human_corr/disease_rank_adjusted/",filename,".txt", sep = "");
+        null_path<-paste("filename,".txt", sep = "");
         write.table(rankadj,null_path,quote=F,sep="\t")
  
 }) 
